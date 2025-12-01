@@ -1,0 +1,20 @@
+.movie_list_header {
+  padding: 0.625rem 1.875rem;
+
+  justify-content: space-between;
+  margin-bottom: 0.313rem;
+}
+
+.movie_list_heading {
+  font-size: 26px;
+  color: #ffe400;
+}
+
+.movie_filter {
+  list-style: none;
+  font-size: 16px;
+}
+
+.movie_filter_item {
+  padding: 0.313rem 0.625rem;
+}
