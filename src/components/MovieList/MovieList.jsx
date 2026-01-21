@@ -8,7 +8,7 @@ const MovieList = () => {
         <h2 className=" align_center movie_list_heading">Popular</h2>
         <div className="align_center movie_list_fs">
           <ul className="align_center movie_filter">
-            <li className="movie_filter_item">8+ Star</li>
+            <li className="movie_filter_item active">8+ Star</li>
             <li className="movie_filter_item">7+ Star</li>
             <li className="movie_filter_item">6+ Star</li>
           </ul>
@@ -23,6 +23,8 @@ const MovieList = () => {
           </select>
         </div>
       </header>
+
+      <div className="movie_cards"></div>
     </section>
   );
 };

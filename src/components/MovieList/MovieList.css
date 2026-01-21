@@ -20,6 +20,11 @@
   cursor: pointer;
 }
 
+.movie_filter_item.active {
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 500;
+}
+
 .movie_sorting {
   border: none;
   outline: none;
