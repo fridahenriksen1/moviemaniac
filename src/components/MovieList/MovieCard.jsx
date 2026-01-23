@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
   return (
     <a href="" className="movie_card">
       <img
-        src="https://cdn.shopify.com/s/files/1/1057/4964/files/10-Best-Movie-Posters-of-All-Time_480x480.webp?v=1712251697"
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt="movie poster"
         className="movie_poster"
       />
