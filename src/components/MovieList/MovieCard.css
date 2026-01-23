@@ -47,7 +47,10 @@
   margin: 5px 0;
   color: #ffe400;
 }
-
+.movie_date_rate p {
+  display: flex;
+  align-items: center;
+}
 .card_emoji {
   width: 20px;
   height: 20px;
