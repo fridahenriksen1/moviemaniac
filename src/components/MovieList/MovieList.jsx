@@ -4,6 +4,7 @@ import MovieCard from "./MovieCard";
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
+  const [filterMovies, setFilterMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
   useEffect(() => {
     fetchMovies();
@@ -15,13 +16,14 @@ const MovieList = () => {
     );
     const data = await response.json();
     setMovies(data.results);
+    setFilterMovies(data.results);
   };
 
   const handleFilter = (rate) => {
     setMinRating(rate);
 
     const filtered = movies.filter((movie) => movie.vote_average >= rate);
-    setMovies(filtered);
+    setFilterMovies(filtered);
   };
   return (
     <section className="movie_list">
@@ -55,7 +57,7 @@ const MovieList = () => {
       </header>
 
       <div className="movie_cards">
-        {movies.map((movie) => (
+        {filterMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
