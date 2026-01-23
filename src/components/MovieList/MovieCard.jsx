@@ -4,7 +4,11 @@ import Star from "../../assets/star.png";
 
 const MovieCard = ({ movie }) => {
   return (
-    <a href="" className="movie_card">
+    <a
+      href={`https://www.themoviedb.org/movie/${movie.id}`}
+      target="_blank"
+      className="movie_card"
+    >
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt="movie poster"
