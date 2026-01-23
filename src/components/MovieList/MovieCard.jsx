@@ -2,7 +2,7 @@ import React from "react";
 import "./MovieCard.css";
 import Star from "../../assets/star.png";
 
-const MovieCard = () => {
+const MovieCard = ({ movie }) => {
   return (
     <a href="" className="movie_card">
       <img
@@ -11,16 +11,16 @@ const MovieCard = () => {
         className="movie_poster"
       />
       <div className="movie_details">
-        <h3 className="movie_details_heading">Movie Name</h3>
+        <h3 className="movie_details_heading">{movie.original_title}</h3>
         <div className="align_center movie_date_rate">
-          <p>10-20-2020</p>
+          <p>{movie.release_date}</p>
           <p>
-            8.0 <img src={Star} alt="rating icon" className="card_emoji" />
+            {movie.rate_average}{" "}
+            <img src={Star} alt="rating icon" className="card_emoji" />
           </p>
         </div>
         <p className="movie_description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque amet
-          aliquam recusandae libero numquam reiciendis?
+          {movie.overview.slice(0, 100) + "..."}
         </p>
       </div>
     </a>
