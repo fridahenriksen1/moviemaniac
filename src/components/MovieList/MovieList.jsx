@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./MovieList.css";
 import MovieCard from "./MovieCard";
+import FilterGrooup from "./FilterGrooup";
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -12,7 +13,7 @@ const MovieList = () => {
 
   const fetchMovies = async () => {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=183928bab7fc630ed0449e4f66ec21bd"
+      "https://api.themoviedb.org/3/movie/popular?api_key=183928bab7fc630ed0449e4f66ec21bd",
     );
     const data = await response.json();
     setMovies(data.results);
@@ -35,38 +36,7 @@ const MovieList = () => {
       <header className="align_center movie_list_header">
         <h2 className=" align_center movie_list_heading">Popular</h2>
         <div className="align_center movie_list_fs">
-          <ul className="align_center movie_filter">
-            <li
-              className={
-                minRating === 8
-                  ? "movie_filter_item active"
-                  : "movie_filter_item"
-              }
-              onClick={() => handleFilter(8)}
-            >
-              8+ Star
-            </li>
-            <li
-              className={
-                minRating === 7
-                  ? "movie_filter_item active"
-                  : "movie_filter_item"
-              }
-              onClick={() => handleFilter(7)}
-            >
-              7+ Star
-            </li>
-            <li
-              className={
-                minRating === 6
-                  ? "movie_filter_item active"
-                  : "movie_filter_item"
-              }
-              onClick={() => handleFilter(6)}
-            >
-              6+ Star
-            </li>
-          </ul>
+          <FilterGrooup minRating={minRating} onRatingClick={handleFilter} />
           <select name="" id="" className="movie_sorting">
             <option value="">SortBy</option>
             <option value="">Date</option>
