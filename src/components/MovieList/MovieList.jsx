@@ -36,7 +36,11 @@ const MovieList = () => {
       <header className="align_center movie_list_header">
         <h2 className=" align_center movie_list_heading">Popular</h2>
         <div className="align_center movie_list_fs">
-          <FilterGrooup minRating={minRating} onRatingClick={handleFilter} />
+          <FilterGrooup
+            minRating={minRating}
+            onRatingClick={handleFilter}
+            ratings={[8, 7, 6]}
+          />
           <select name="" id="" className="movie_sorting">
             <option value="">SortBy</option>
             <option value="">Date</option>
