@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import _ from "lodash";
+
 import "./MovieList.css";
 import MovieCard from "./MovieCard";
 import FilterGrooup from "./FilterGrooup";
@@ -14,6 +16,13 @@ const MovieList = () => {
   useEffect(() => {
     fetchMovies();
   }, []);
+
+  useEffect(() => {
+    if (sort.by !== "default") {
+      const sortedMovies = _.orderBy(filterMovies, [sort.by], [sort.order]);
+      setFilterMovies(sortedMovies);
+    }
+  }, [sort]);
 
   const fetchMovies = async () => {
     const response = await fetch(
@@ -39,7 +48,7 @@ const MovieList = () => {
     const { name, value } = e.target;
     setSort((prev) => ({ ...prev, [name]: value }));
   };
-  console.log(sort);
+
   return (
     <section className="movie_list">
       <header className="align_center movie_list_header">
