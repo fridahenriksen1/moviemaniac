@@ -8,10 +8,10 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>MovieManiac</h1>
       <div className="navbar_links">
-        <DarkMode />
         <a href="">Popular</a>
         <a href="">Top Rated</a>
         <a href="">Upcoming</a>
+        <DarkMode />
       </div>
     </nav>
   );
