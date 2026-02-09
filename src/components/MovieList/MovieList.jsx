@@ -5,7 +5,7 @@ import "./MovieList.css";
 import MovieCard from "./MovieCard";
 import FilterGrooup from "./FilterGrooup";
 
-const MovieList = () => {
+const MovieList = ({ type, title }) => {
   const [movies, setMovies] = useState([]);
   const [filterMovies, setFilterMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
@@ -26,7 +26,7 @@ const MovieList = () => {
 
   const fetchMovies = async () => {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=183928bab7fc630ed0449e4f66ec21bd",
+      `https://api.themoviedb.org/3/movie/${type}?api_key=183928bab7fc630ed0449e4f66ec21bd`,
     );
     const data = await response.json();
     setMovies(data.results);
@@ -50,9 +50,9 @@ const MovieList = () => {
   };
 
   return (
-    <section className="movie_list">
+    <section className="movie_list" id={type}>
       <header className="align_center movie_list_header">
-        <h2 className=" align_center movie_list_heading">Popular</h2>
+        <h2 className=" align_center movie_list_heading">{title}</h2>
         <div className="align_center movie_list_fs">
           <FilterGrooup
             minRating={minRating}

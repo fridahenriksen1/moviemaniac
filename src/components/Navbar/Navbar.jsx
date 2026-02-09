@@ -8,9 +8,9 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>MovieManiac</h1>
       <div className="navbar_links">
-        <a href="">Popular</a>
-        <a href="">Top Rated</a>
-        <a href="">Upcoming</a>
+        <a href="#popular">Popular</a>
+        <a href="#top_rated">Top Rated</a>
+        <a href="#upcoming">Upcoming</a>
         <DarkMode />
       </div>
     </nav>
