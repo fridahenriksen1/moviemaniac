@@ -23,3 +23,7 @@
   text-decoration: none;
   padding: 0 0.938rem;
 }
+
+.navbar_links > a.active {
+  font-weight: 700;
+}
