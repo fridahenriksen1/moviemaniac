@@ -15,7 +15,7 @@ const MovieList = ({ type, title }) => {
   });
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [type]);
 
   useEffect(() => {
     if (sort.by !== "default") {
