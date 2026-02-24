@@ -24,7 +24,7 @@ const App = () => {
             path="/upcoming"
             element={<MovieList type="upcoming" title="Upcoming" />}
           />
-          <Route path="/movie/:id" element={<SingleMovie />} />
+          <Route path="/movie/:movieId" element={<SingleMovie />} />
         </Routes>
       </main>
     </div>
